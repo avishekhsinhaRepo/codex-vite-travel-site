@@ -65,13 +65,29 @@ h6,
   padding: 5rem 0;
   color: #fff;
   overflow: hidden;
-  background: url("https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+}
+
+.hero-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item,
+.hero-carousel img {
+  height: 100%;
+}
+
+.hero-carousel img {
+  object-fit: cover;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(110deg, rgba(3, 63, 99, 0.92), rgba(15, 110, 140, 0.68));
+  z-index: 1;
 }
 
 .eyebrow {
