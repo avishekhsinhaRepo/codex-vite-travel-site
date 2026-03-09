@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripNest India | Book Flights, Buses & Holidays</title>
+    <meta
+      name="description"
+      content="Book flights, buses, and holiday packages across India with a rich travel booking experience powered by mock data."
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="sticky-top shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+            <span class="brand-dot"><i class="bi bi-compass"></i></span>
+            <span class="brand-text">TripNest India</span>
+          </a>
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+              <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#search">Search</a></li>
+              <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+              <li class="nav-item"><a class="nav-link" href="#deals">Deals</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              <li class="nav-item ms-lg-2">
+                <a class="btn btn-warning rounded-pill px-3" href="#confirmation">My Booking</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero-section section-anchor">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-7">
+              <p class="eyebrow text-uppercase mb-2">India Travel Marketplace</p>
+              <h1 class="display-4 fw-bold mb-3 reveal">Book Flights, Buses & Dream Holidays in Minutes</h1>
+              <p class="lead mb-4 text-light reveal delay-1">
+                Plan quick getaways and big adventures with curated routes, packages, and instant mock confirmations.
+              </p>
+              <div class="d-flex flex-wrap gap-3 reveal delay-2">
+                <a href="#search" class="btn btn-lg btn-warning rounded-pill px-4">Start Booking</a>
+                <a href="#deals" class="btn btn-lg btn-outline-light rounded-pill px-4">View Top Deals</a>
+              </div>
+              <div class="hero-trust d-flex flex-wrap gap-4 mt-4 reveal delay-3">
+                <div><strong>1.2M+</strong> happy travelers</div>
+                <div><strong>500+</strong> daily routes</div>
+                <div><strong>4.8/5</strong> average ratings</div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="hero-card card border-0 shadow-lg reveal delay-2">
+                <img
+                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+                  class="card-img-top"
+                  alt="Coastal travel destination"
+                />
+                <div class="card-body">
+                  <p class="mb-1 text-muted">Featured Escape</p>
+                  <h3 class="h5 fw-bold">Goa Coastal Bliss</h3>
+                  <p class="mb-2">3 nights, beach stay, water sports & sunset cruise.</p>
+                  <span class="badge text-bg-warning">From INR 12,900</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="search" class="search-section py-5 section-anchor">
+        <div class="container">
+          <div class="section-head mb-4">
+            <h2 class="fw-bold">Search & Book</h2>
+            <p class="text-muted mb-0">Switch between Flights, Buses, and Holidays to find your best option.</p>
+          </div>
+
+          <div class="card border-0 shadow-lg booking-panel">
+            <div class="card-body p-4 p-lg-5">
+              <ul class="nav nav-pills mb-4" id="bookingTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="flight-tab" data-bs-toggle="pill" data-bs-target="#flight-pane" type="button" role="tab" aria-controls="flight-pane" aria-selected="true">
+                    <i class="bi bi-airplane me-2"></i>Flights
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="bus-tab" data-bs-toggle="pill" data-bs-target="#bus-pane" type="button" role="tab" aria-controls="bus-pane" aria-selected="false">
+                    <i class="bi bi-bus-front me-2"></i>Buses
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="holiday-tab" data-bs-toggle="pill" data-bs-target="#holiday-pane" type="button" role="tab" aria-controls="holiday-pane" aria-selected="false">
+                    <i class="bi bi-umbrella-beach me-2"></i>Holidays
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="bookingTabContent">
+                <div class="tab-pane fade show active" id="flight-pane" role="tabpanel" aria-labelledby="flight-tab" tabindex="0">
+                  <form id="flightForm" data-category="flights" class="row g-3">
+                    <div class="col-md-3">
+                      <label for="flightFrom" class="form-label">From</label>
+                      <select id="flightFrom" name="origin" class="form-select" required></select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="flightTo" class="form-label">To</label>
+                      <select id="flightTo" name="destination" class="form-select" required></select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="flightDate" class="form-label">Date</label>
+                      <input id="flightDate" name="date" class="form-control" type="date" required />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="flightTravelers" class="form-label">Travelers</label>
+                      <input id="flightTravelers" name="travelers" class="form-control" type="number" min="1" max="9" value="1" required />
+                    </div>
+                    <div class="col-md-1 d-grid align-content-end">
+                      <button class="btn btn-warning mt-md-4" type="submit">Go</button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="tab-pane fade" id="bus-pane" role="tabpanel" aria-labelledby="bus-tab" tabindex="0">
+                  <form id="busForm" data-category="buses" class="row g-3">
+                    <div class="col-md-3">
+                      <label for="busFrom" class="form-label">From</label>
+                      <select id="busFrom" name="origin" class="form-select" required></select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="busTo" class="form-label">To</label>
+                      <select id="busTo" name="destination" class="form-select" required></select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="busDate" class="form-label">Date</label>
+                      <input id="busDate" name="date" class="form-control" type="date" required />
+                    </div>
+                    <div class="col-md-2">
+                      <label for="busSeats" class="form-label">Seats</label>
+                      <input id="busSeats" name="travelers" class="form-control" type="number" min="1" max="6" value="1" required />
+                    </div>
+                    <div class="col-md-1 d-grid align-content-end">
+                      <button class="btn btn-warning mt-md-4" type="submit">Go</button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="tab-pane fade" id="holiday-pane" role="tabpanel" aria-labelledby="holiday-tab" tabindex="0">
+                  <form id="holidayForm" data-category="holidays" class="row g-3">
+                    <div class="col-md-3">
+                      <label for="holidayDestination" class="form-label">Destination</label>
+                      <select id="holidayDestination" name="destination" class="form-select" required></select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="holidayMonth" class="form-label">Month</label>
+                      <select id="holidayMonth" name="month" class="form-select" required>
+                        <option value="">Select month</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="holidayBudget" class="form-label">Budget (max)</label>
+                      <select id="holidayBudget" name="budget" class="form-select" required>
+                        <option value="">Choose</option>
+                        <option value="15000">INR 15,000</option>
+                        <option value="25000">INR 25,000</option>
+                        <option value="40000">INR 40,000</option>
+                        <option value="70000">INR 70,000</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="holidayTravelers" class="form-label">Travelers</label>
+                      <input id="holidayTravelers" name="travelers" class="form-control" type="number" min="1" max="8" value="2" required />
+                    </div>
+                    <div class="col-md-2 d-grid align-content-end">
+                      <button class="btn btn-warning mt-md-4" type="submit">Find Package</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="py-5 section-anchor">
+        <div class="container">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
+            <div>
+              <h2 class="fw-bold mb-1">Search Results</h2>
+              <p class="text-muted mb-0" id="resultsMeta">Run a search to view options.</p>
+            </div>
+            <button id="clearResults" class="btn btn-outline-secondary btn-sm">Clear</button>
+          </div>
+          <div id="resultGrid" class="row g-4"></div>
+        </div>
+      </section>
+
+      <section id="confirmation" class="confirmation-section py-5 section-anchor">
+        <div class="container">
+          <h2 class="fw-bold mb-3">Booking Confirmation</h2>
+          <p class="text-muted">Your latest booking appears here for this session.</p>
+          <div id="confirmationBox" class="card border-0 shadow-sm empty-state">
+            <div class="card-body text-center p-5">
+              <i class="bi bi-ticket-perforated fs-1 text-muted"></i>
+              <p class="mb-0 mt-2">No booking yet. Search and book to view confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="deals" class="py-5 section-anchor">
+        <div class="container">
+          <div class="section-head mb-4">
+            <h2 class="fw-bold">Trending Deals</h2>
+            <p class="text-muted mb-0">Curated picks for quick escapes and long weekends.</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <article class="deal-card p-4 h-100">
+                <h3 class="h5">Monsoon Hills</h3>
+                <p>Exclusive bus + hotel bundles for Coorg, Munnar, and Ooty.</p>
+                <span class="badge text-bg-success">Save up to 22%</span>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="deal-card p-4 h-100">
+                <h3 class="h5">Coastal Sprint</h3>
+                <p>Flash fares on flights to Goa, Kochi, and Visakhapatnam.</p>
+                <span class="badge text-bg-info">48-hour sale</span>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="deal-card p-4 h-100">
+                <h3 class="h5">Royal Rajasthan</h3>
+                <p>Holiday circuits with heritage stays and guided city tours.</p>
+                <span class="badge text-bg-warning">From INR 18,999</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer section-anchor">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h3 class="h5 text-white">TripNest India</h3>
+            <p class="mb-3">Book smarter trips with curated travel options and instant confirmations.</p>
+            <div class="d-flex gap-2 social-links">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h4 class="h6 text-white">Quick Links</h4>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#search">Book</a></li>
+              <li><a href="#deals">Deals</a></li>
+              <li><a href="#confirmation">My Booking</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h4 class="h6 text-white">Support</h4>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Cancellation Policy</a></li>
+              <li><a href="#">Terms & Privacy</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h4 class="h6 text-white">Contact</h4>
+            <p class="mb-1">support@tripnestindia.com</p>
+            <p class="mb-0">+91 90000 12345</p>
+          </div>
+        </div>
+        <hr class="my-4 border-light-subtle" />
+        <p class="mb-0 small">© 2026 TripNest India. Demo project with mock booking data.</p>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="bookingModalLabel">Complete Your Booking</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="bookingForm" class="needs-validation" novalidate>
+            <div class="modal-body">
+              <div id="selectedSummary" class="alert alert-info mb-3"></div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label">Full name</label>
+                  <input id="fullName" name="fullName" class="form-control" required />
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input id="email" name="email" type="email" class="form-control" required />
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input id="phone" name="phone" class="form-control" pattern="[0-9]{10}" required />
+                  <div class="invalid-feedback">Enter a 10-digit mobile number.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="passengerCount" class="form-label">Travelers</label>
+                  <input id="passengerCount" name="travelers" type="number" min="1" max="9" class="form-control" required />
+                  <div class="invalid-feedback">Enter a valid traveler count.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="specialRequest" class="form-label">Special request</label>
+                  <input id="specialRequest" name="specialRequest" class="form-control" placeholder="Optional" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-warning">Confirm Booking</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
