@@ -184,6 +184,7 @@ const mockData = {
 };
 
 const resultGrid = document.getElementById("resultGrid");
+const resultsSection = document.getElementById("results");
 const resultsMeta = document.getElementById("resultsMeta");
 const confirmationBox = document.getElementById("confirmationBox");
 const bookingForm = document.getElementById("bookingForm");
@@ -291,14 +292,11 @@ const bookingHeading = (item) => {
 
 const renderResults = (results, category) => {
   resultGrid.innerHTML = "";
+  const hasResults = results.length > 0;
+  resultsSection.hidden = !hasResults;
   resultsMeta.textContent = buildResultMeta(category, results.length);
 
-  if (!results.length) {
-    resultGrid.innerHTML = `
-      <div class="col-12">
-        <div class="alert alert-warning mb-0">No options match your search. Try changing date, route, or travelers.</div>
-      </div>
-    `;
+  if (!hasResults) {
     return;
   }
 
@@ -427,7 +425,9 @@ const handleSearchSubmit = (event) => {
   const results = getSearchResults(category, filters);
 
   renderResults(results, category);
-  document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (results.length) {
+    resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 };
 
 const handleBookClick = (event) => {
@@ -520,6 +520,7 @@ const init = () => {
   bookingForm.addEventListener("submit", handleBookingSubmit);
 
   clearResultsBtn.addEventListener("click", () => {
+    resultsSection.hidden = true;
     resultGrid.innerHTML = "";
     resultsMeta.textContent = "Run a search to view options.";
   });
